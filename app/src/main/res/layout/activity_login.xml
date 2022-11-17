@@ -31,6 +31,7 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -39,13 +40,14 @@
         app:layout_constraintVertical_bias="0.552" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/LoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="47dp"
+        android:clickable="true"
         android:text="Login"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,29 +65,28 @@
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="17dp"
         android:text="Don't have account?"
-        app:layout_constraintBottom_toTopOf="@+id/Registernow"
+        app:layout_constraintBottom_toTopOf="@+id/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginButton" />
 
     <TextView
-        android:id="@+id/Registernow"
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="143dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="144dp"
+        android:clickable="true"
+        android:minHeight="48dp"
         android:text="Register Now!"
         android:textColor="@color/purple_700"
+        android:textSize="15sp"
         android:textStyle="bold"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -98,6 +99,7 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
