@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".AboutMeActivity">
 
     <TextView
@@ -13,7 +14,9 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="94dp"
         android:text="Account Details"
+        android:textColor="#FEFEFE"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,30 +24,39 @@
         android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
         android:layout_marginTop="55dp"
         android:layout_marginEnd="126dp"
         android:text="Name                                           Azzah"
+        android:textColor="#FEFEFE"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountdetails" />
 
     <TextView
         android:id="@+id/Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="11dp"
         android:text="Email                                          Azzahangely@gmail.com"
+        android:textColor="#FEFEFE"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <TextView
-        android:id="@+id/Balace"
+        android:id="@+id/Balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="145dp"
         android:text="Balance                                      0.0"
+        android:textColor="#FEFEFE"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Email" />
 
     <EditText
@@ -55,9 +67,10 @@
         android:layout_marginTop="47dp"
         android:ems="10"
         android:hint="Amount"
+        android:textColor="#FEFEFE"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Balace" />
+        app:layout_constraintTop_toBottomOf="@+id/Balance" />
 
     <Button
         android:id="@+id/button"
@@ -66,8 +79,9 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="84dp"
         android:text="Top Up"
+        android:textColor="#FEFEFE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Balace" />
+        app:layout_constraintTop_toBottomOf="@+id/Balance" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
