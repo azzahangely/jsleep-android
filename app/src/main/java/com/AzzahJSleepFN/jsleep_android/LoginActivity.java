@@ -38,12 +38,12 @@ public class LoginActivity extends AppCompatActivity {
 
         TextView register = findViewById(R.id.register);
         Button login = findViewById(R.id.LoginButton);
-        login.setOnClickListener(i -> startActivity(new Intent(this, MainActivity.class)));
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Account account_login = requestLogin();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
