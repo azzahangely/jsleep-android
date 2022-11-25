@@ -8,7 +8,7 @@
     tools:context=".RegisterActivity">
 
   <EditText
-      android:id="@+id/editTextTextPersonName"
+      android:id="@+id/name_register"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="96dp"
@@ -18,13 +18,13 @@
       android:ems="10"
       android:hint="Name"
       android:inputType="textPersonName"
-      app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+      app:layout_constraintBottom_toTopOf="@+id/email_register"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
   <EditText
-      android:id="@+id/editTextTextEmailAddress"
+      android:id="@+id/email_register"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="96dp"
@@ -34,13 +34,13 @@
       android:ems="10"
       android:hint="Email"
       android:inputType="textEmailAddress"
-      app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
+      app:layout_constraintBottom_toTopOf="@+id/password_register"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+      app:layout_constraintTop_toBottomOf="@+id/name_register" />
 
   <EditText
-      android:id="@+id/editTextTextPassword2"
+      android:id="@+id/password_register"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="96dp"
@@ -50,13 +50,13 @@
       android:ems="10"
       android:hint="Password"
       android:inputType="textPassword"
-      app:layout_constraintBottom_toTopOf="@+id/button2"
+      app:layout_constraintBottom_toTopOf="@+id/register_button"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+      app:layout_constraintTop_toBottomOf="@+id/email_register" />
 
   <Button
-      android:id="@+id/button2"
+      android:id="@+id/register_button"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="152dp"
@@ -66,5 +66,5 @@
       android:text="Register"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+      app:layout_constraintTop_toBottomOf="@+id/password_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>
