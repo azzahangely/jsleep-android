@@ -25,6 +25,15 @@ import com.AzzahJSleepFN.jsleep_android.request.UtilsApi;
 
 import java.sql.SQLOutput;
 
+/**
+ * About Me Activity represent the summary of profile activity of this application.
+ * This section will display such as name, email, and balance of user.
+ * This activity should be the same section to Top Up user's balance.
+ *
+ * @author Azzah Angeli
+ * @version 1.0
+ *
+ */
 public class AboutMeActivity extends AppCompatActivity {
     BaseApiService mBaseApiService;
     Context mContext;

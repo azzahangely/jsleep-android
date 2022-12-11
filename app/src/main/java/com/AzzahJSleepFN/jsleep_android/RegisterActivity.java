@@ -17,6 +17,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import com.AzzahJSleepFN.jsleep_android.request.BaseApiService;
 
+/**
+ * The Register Activity allows a user to create a new account on the app.
+ * @author Azzah Angeli
+ * @version 1.0
+ */
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText name, email, password;

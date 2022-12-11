@@ -11,6 +11,14 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
+/**
+ * BaseApiService is a base class for All API Services that provides common methods
+ * and functionally to do the interaction with API endpoints.
+ *
+ * @author Azzah Angeli
+ * @version 1.0
+ */
+
 public interface BaseApiService {
 
     @GET("account/{id}")

@@ -21,6 +21,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Create Room Activity is an activity where user can customize the room
+ * they wanted to rent.
+ *
+ * @author Azzah Angeli
+ * @version 1.0
+ *
+ */
+
 public class CreateRoomActivity extends AppCompatActivity {
     Context mContext;
     BaseApiService mBaseApiService;

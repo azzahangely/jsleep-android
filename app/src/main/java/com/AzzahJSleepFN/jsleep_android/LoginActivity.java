@@ -19,6 +19,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * This class represents the login screen for the application. It allows the user to enter their
+ * username and password, and provides functionality for authenticating the user and logging them
+ * in.
+ *
+ * @author Azzah Angeli
+ * @version 1.0
+ */
+
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText username, password;

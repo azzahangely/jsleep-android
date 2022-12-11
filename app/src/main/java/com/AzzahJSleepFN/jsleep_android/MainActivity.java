@@ -21,6 +21,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * The MainActivity is the main entry point for the application.
+ * It is responsible for displaying the initial screen and handling user interactions.
+ * @author Azzah Angeli
+ * @version 1.0
+ */
 public class MainActivity extends AppCompatActivity {
     public static Account LoginAccount;
     public static Room RoomDetail;

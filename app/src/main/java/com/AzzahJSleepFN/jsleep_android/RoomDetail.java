@@ -14,6 +14,15 @@ import com.AzzahJSleepFN.jsleep_android.request.BaseApiService;
 
 import java.util.List;
 
+/**
+ * This activity represent every details such as Name of the renter, bed type, price, room size,
+ * and address, that has been created on create room activity.
+ * The details should be shown as a listview
+ *
+ * @author Azzah Angeli
+ * @version 1.0
+ *
+ */
 
 public class RoomDetail extends AppCompatActivity {
     Context mContext;
