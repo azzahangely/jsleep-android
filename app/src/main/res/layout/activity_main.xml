@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listViewMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>
@@ -30,22 +28,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/next_button"
+            android:id="@+id/prev_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:backgroundTint="#673AB7"
-            android:text="NEXT" />
+            android:text="PREV" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/pageNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="40dp"
             android:layout_weight="1"
-            android:ems="2"
+            android:ems="1"
             android:text="1"
             android:gravity="center"
             android:inputType="textPersonName"
@@ -57,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="40dp"
             android:layout_weight="1"
             android:backgroundTint="#673AB7"
             android:text="GO" />

@@ -1,251 +1,321 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DEC1E3"
     tools:context=".AboutMeActivity">
-
 
     <TextView
         android:id="@+id/accountdetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="128dp"
+        android:fontFamily="serif"
         android:text="Account Details"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textColor="#131010"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/accountEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="128dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Azzahangeli@netlab.com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <TextView
+        android:id="@+id/balance_num"
+        android:layout_width="20dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="144dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountEmail" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="35dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="serif"
+        android:text="Email"
+        android:textAlignment="center"
+        android:textColor="#8D65A0"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/accountEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="serif"
+        android:text="Balance"
+        android:textAlignment="center"
+        android:textColor="#8D65A0"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountEmail" />
+
+    <TextView
+        android:id="@+id/accountName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="9dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Azzah Angeli"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="185dp"
+        android:fontFamily="serif"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#8D65A0"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/balance_template"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="344dp"
-        android:layout_marginEnd="276dp"
-        android:text="Balance"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/email_template"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="292dp"
-        android:text="Email"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/name_template"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="292dp"
-        android:text="Name"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/name_aboutme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="168dp"
-        android:text="azzah"
-        android:textColor="#FFC107"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/email_aboutme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="48dp"
-        android:text="azzahangely@gmail.com"
-        android:textColor="#FFC107"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/balance_aboutme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="344dp"
-        android:layout_marginEnd="184dp"
-        android:text="0.0"
-        android:textColor="#FFC107"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountdetails" />
 
     <EditText
         android:id="@+id/amount"
-        android:layout_width="122dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="464dp"
-        android:layout_marginEnd="144dp"
-        android:ems="10"
-        android:hint="amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="17dp"
+        android:ems="7"
+        android:fontFamily="monospace"
+        android:hint="Amount"
         android:inputType="number"
-        android:textColorHint="#8AFFC107"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
+
+    <Button
+        android:id="@+id/btnTopUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="70dp"
+        android:backgroundTint="#8D65A0"
+        android:clickable="true"
+        android:text="TOP UP"
+        app:iconTint="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/balance_num" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_layout_RegisterRenter"
-            android:layout_width="match_parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview3"
+        android:layout_width="376dp"
+        android:layout_height="280dp"
+        android:elevation="10dp"
+        app:cardBackgroundColor="#B99FBD"
+        app:cardCornerRadius="15dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="83dp"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="372dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="310dp">
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="70dp"
+            android:text="Name" />
 
-            <Button
-                android:id="@+id/RegisterRenter_button"
-                android:layout_marginHorizontal="80dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Register Renter"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_layout_input_register"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-90dp"
-            android:visibility="visible"
-            tools:layout_editor_absoluteX="-80dp"
-            tools:layout_editor_absoluteY="300dp">
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="120dp"
+            android:text="Phone Number" />
 
-            <LinearLayout
-                android:id="@+id/layout_renter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteX = "4dp"
-                tools:layout_editor_absoluteY="350dp">
-
-                <EditText
-                    android:id="@+id/renter_name"
-                    android:text="Name"
-                    android:inputType="textPersonName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:ems="10" />
-
-                <EditText
-                    android:id="@+id/renter_phone_number"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Phone Number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/renter_address"
-                    android:text="Address"
-                    android:inputType="textPersonName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:ems="10" />
-
-                <LinearLayout
-                    android:id="@+id/cancel_register"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/cancel_register_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="70dp"
-                        android:layout_marginTop="35dp"
-                        android:text="Cancel" />
-
-                    <Button
-                        android:id="@+id/register_fixed_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="70dp"
-                        android:layout_marginTop="35dp"
-                        android:clickable="true"
-                        android:text="Register"
-                        app:layout_constraintBottom_toBottomOf="parent" />
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/topup_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="536dp"
-                    android:layout_marginEnd="160dp"
-                    android:text="Top Up"
-                    android:textColor="#FEFEFE" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_layout_display"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/Address"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-300dp"
-            tools:layout_editor_absoluteX="-69dp"
-            tools:layout_editor_absoluteY="300dp">
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="170dp"
+            android:text="Address" />
 
-            <TextView
-                android:id="@+id/display_name"
-                android:text="Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"/>
-            <TextView
-                android:id="@+id/display_address"
-                android:text="Address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"/>
-            <TextView
-                android:id="@+id/display_phone_number"
-                android:text="Phone Number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"/>
+        <TextView
+            android:id="@+id/registeredName"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="180dp"
+            android:layout_marginTop="70dp"
+            android:text="Netlab Store" />
 
-            <TextView
-                android:id="@+id/show_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp" />
-            <TextView
-                android:id="@+id/show_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp" />
-            <TextView
-                android:id="@+id/show_phone_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp" />
+        <TextView
+            android:id="@+id/registeredAddress"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="180dp"
+            android:layout_marginTop="120dp"
+            android:text="Gedung DTE Lantai 2" />
 
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+        <TextView
+            android:id="@+id/registeredPhoneNumber"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="180dp"
+            android:layout_marginTop="170dp"
+            android:text="081234567890" />
+
+        <TextView
+            android:id="@+id/registeredRenter"
+            android:layout_width="214dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="100dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Registered Renter"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
+        android:elevation="10dp"
+        app:cardBackgroundColor="#DEC1E3"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardview2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amount">
+
+        <Button
+            android:id="@+id/btnRegisterRenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="100dp"
+            android:backgroundTint="#8D65A0"
+            android:text="REGISTER RENTER"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAmount" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview2"
+        android:layout_width="380dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="83dp"
+        android:elevation="10dp"
+        android:visibility="invisible"
+        app:cardBackgroundColor="#B99FBD"
+        app:cardCornerRadius="18dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:ems="15"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="70dp"
+            android:ems="15"
+            android:hint="Address"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="130dp"
+            android:ems="10"
+            android:hint="Phone Number"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="195dp"
+            android:backgroundTint="#8D65A0"
+            android:clickable="true"
+            android:text="Register" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="230dp"
+            android:layout_marginTop="195dp"
+            android:backgroundTint="#8D65A0"
+            android:clickable="true"
+            android:text="Cancel" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

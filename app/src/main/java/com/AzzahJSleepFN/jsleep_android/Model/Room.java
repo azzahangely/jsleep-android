@@ -12,5 +12,5 @@ public class Room {
     public City city;
     public int size;
     public BedType bedType;
-    public Facility facility;
+    public List<Facility> facility;
 }

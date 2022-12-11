@@ -23,16 +23,17 @@ public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText username, password;
     Context mContext;
-    protected static Account staticAccount;
+    public static Account staticAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         mApiService = UtilsApi.getApiService();
         mContext = this;
+
         username = findViewById(R.id.Username);
+
         password = findViewById(R.id.Password);
 
         Button login = findViewById(R.id.LoginButton);
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String usernameLogin = username.getText().toString();
                 String passwordLogin = password.getText().toString();
-                Account account_login = requestLogin(usernameLogin, passwordLogin);
+                Account account = requestLogin(usernameLogin, passwordLogin);
                 System.out.println("====login button====");
             }
         });
@@ -56,30 +57,30 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    protected Account requestAccount() {
-        System.out.println("===request account===");
-        mApiService.getAccount(0).enqueue(new Callback<Account>() {
-            @Override
-            public void onResponse(Call<Account> call, Response<Account> response) {
-                if (response.isSuccessful()) {
-                    Account account;
-                    account = response.body();
-                    System.out.println("SUCCESSFUL");
-                    System.out.println(account.toString());
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Account> call, Throwable t) {
-                System.out.println("failed");
-                //System.out.println(t.toString());
-                Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return null;
-    }
+//    protected Account requestAccount() {
+//        System.out.println("===request account===");
+//        mApiService.getAccount(0).enqueue(new Callback<Account>() {
+//            @Override
+//            public void onResponse(Call<Account> call, Response<Account> response) {
+//                if (response.isSuccessful()) {
+//                    Account account;
+//                    account = response.body();
+//                    System.out.println("SUCCESSFUL");
+//                    System.out.println(account.toString());
+//                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                    startActivity(intent);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Account> call, Throwable t) {
+//                System.out.println("failed");
+//                //System.out.println(t.toString());
+//                Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        return null;
+//    }
 
     protected Account requestLogin(String username, String password){
         System.out.println("===REQUEST LOGIN===");
@@ -87,8 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
-                    Account account;
-                    account = response.body();
+                    Account account = response.body();
                     staticAccount = account;
                     System.out.println("SUCCESSFUL");
                     System.out.println(account.toString());

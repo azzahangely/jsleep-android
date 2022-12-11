@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoomDetail"
+    android:background="#DEC1E3">
+
+    <TextView
+        android:id="@+id/roomsAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="294dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Jalan jalan bersama Netlab"
+        app:layout_constraintBottom_toTopOf="@+id/detFacility"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailAddress"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/detName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="313dp"
+        android:layout_marginBottom="19dp"
+        android:text="Name "
+        android:textColor="#884893"
+        app:layout_constraintBottom_toTopOf="@+id/detailBedType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detailRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="345dp"
+        android:fontFamily="serif"
+        android:text="Detail Room"
+        android:textColor="#644971"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/SwimmingPool"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detailBedType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="296dp"
+        android:layout_marginBottom="19dp"
+        android:text="Bed Type"
+        android:textColor="#FF884893"
+        app:layout_constraintBottom_toTopOf="@+id/detailSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detName" />
+
+    <TextView
+        android:id="@+id/detailSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginBottom="19dp"
+        android:text="Size"
+        android:textColor="#FF884893"
+        app:layout_constraintBottom_toTopOf="@+id/detailPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailBedType" />
+
+    <TextView
+        android:id="@+id/detailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="302dp"
+        android:layout_marginBottom="87dp"
+        android:text="Address"
+        android:textColor="#FF884893"
+        app:layout_constraintBottom_toTopOf="@+id/detFacility"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailPrice" />
+
+    <TextView
+        android:id="@+id/detailPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="322dp"
+        android:layout_marginBottom="19dp"
+        android:text="Price"
+        android:textColor="#FF884893"
+        app:layout_constraintBottom_toTopOf="@+id/detailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailSize" />
+
+    <CheckBox
+        android:id="@+id/SwimmingPool"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="145dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:buttonTint="#9A64A4"
+        android:clickable="true"
+        android:text="Swimming Pool"
+        android:textColor="#7D7B7B"
+        app:layout_constraintBottom_toTopOf="@+id/Restaurant"
+        app:layout_constraintEnd_toStartOf="@+id/Fitnesscenter"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detFacility" />
+
+    <CheckBox
+        android:id="@+id/AC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="91dp"
+        android:buttonTint="#9A64A4"
+        android:clickable="true"
+        android:text="AC"
+        android:textColor="#7D7B7B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Bathtub"
+        app:layout_constraintTop_toBottomOf="@+id/WiFi" />
+
+    <CheckBox
+        android:id="@+id/WiFi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:buttonTint="#9A64A4"
+        android:clickable="true"
+        android:text="WiFi"
+        android:textColor="#7D7B7B"
+        app:layout_constraintStart_toEndOf="@+id/Balcony"
+        app:layout_constraintTop_toBottomOf="@+id/Fitnesscenter" />
+
+    <CheckBox
+        android:id="@+id/Refrigerator"
+        android:layout_width="132dp"
+        android:layout_height="43dp"
+        android:layout_marginHorizontal="270dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="139dp"
+        android:buttonTint="#9A64A4"
+        android:text="Refrigerator"
+        android:textColor="#7D7B7B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Bathtub"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Restaurant" />
+
+    <CheckBox
+        android:id="@+id/Restaurant"
+        android:layout_width="137dp"
+        android:layout_height="47dp"
+        android:layout_marginHorizontal="145dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:buttonTint="#9A64A4"
+        android:clickable="true"
+        android:text="Restaurant"
+        android:textColor="#7D7B7B"
+        app:layout_constraintBottom_toTopOf="@+id/Refrigerator"
+        app:layout_constraintEnd_toStartOf="@+id/Balcony"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SwimmingPool" />
+
+    <CheckBox
+        android:id="@+id/Balcony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="4dp"
+        android:buttonTint="#9A64A4"
+        android:text="Balcony"
+        android:textColor="#7D7B7B"
+        app:layout_constraintBottom_toTopOf="@+id/AC"
+        app:layout_constraintEnd_toStartOf="@+id/WiFi"
+        app:layout_constraintStart_toEndOf="@+id/Restaurant"
+        app:layout_constraintTop_toBottomOf="@+id/Fitnesscenter"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/detFacility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="4dp"
+        android:text="Facility"
+        android:textColor="#9B64A5"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/SwimmingPool"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/roomsAddress" />
+
+    <CheckBox
+        android:id="@+id/Bathtub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="142dp"
+        android:buttonTint="#9A64A4"
+        android:clickable="true"
+        android:text="Bathtub"
+        android:textColor="#7D7B7B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AC"
+        app:layout_constraintStart_toEndOf="@+id/Refrigerator"
+        app:layout_constraintTop_toBottomOf="@+id/Balcony"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <CheckBox
+        android:id="@+id/Fitnesscenter"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="4dp"
+        android:buttonTint="#9A64A4"
+        android:clickable="true"
+        android:text="Fitness Center"
+        android:textColor="#7D7B7B"
+        app:layout_constraintBottom_toTopOf="@+id/WiFi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SwimmingPool"
+        app:layout_constraintTop_toBottomOf="@+id/detFacility" />
+
+    <TextView
+        android:id="@+id/roomsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Sheraton"
+        app:layout_constraintStart_toEndOf="@+id/detName"
+        app:layout_constraintTop_toBottomOf="@+id/detailRoom" />
+
+    <TextView
+        android:id="@+id/roomsBedType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="23dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="King"
+        app:layout_constraintStart_toEndOf="@+id/detailBedType"
+        app:layout_constraintTop_toBottomOf="@+id/roomsName" />
+
+    <TextView
+        android:id="@+id/roomsSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="20"
+        app:layout_constraintStart_toEndOf="@+id/detailSize"
+        app:layout_constraintTop_toBottomOf="@+id/roomsBedType" />
+
+    <TextView
+        android:id="@+id/roomsPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="21dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="IDR 20.000.000"
+        app:layout_constraintStart_toEndOf="@+id/detailPrice"
+        app:layout_constraintTop_toBottomOf="@+id/roomsSize" />
+
+    <Button
+        android:id="@+id/CheckOutRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="71dp"
+        android:backgroundTint="#8D65A0"
+        android:text="Check Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Refrigerator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

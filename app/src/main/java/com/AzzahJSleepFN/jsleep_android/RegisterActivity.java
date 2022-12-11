@@ -63,7 +63,6 @@ public class RegisterActivity extends AppCompatActivity {
             public void onFailure(Call<Account> call, Throwable t) {
                 System.out.println("===request register failed===");
                 Toast.makeText(mContext, "Account has already registered", Toast.LENGTH_SHORT).show();
-
             }
         });
         return null;

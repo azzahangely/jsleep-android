@@ -1,4 +1,5 @@
 package com.AzzahJSleepFN.jsleep_android;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import android.content.Context;
@@ -7,6 +8,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,99 +21,123 @@ import android.content.Intent;
 import com.AzzahJSleepFN.jsleep_android.Model.Account;
 import com.AzzahJSleepFN.jsleep_android.Model.Renter;
 import com.AzzahJSleepFN.jsleep_android.request.BaseApiService;
+import com.AzzahJSleepFN.jsleep_android.request.UtilsApi;
+
+import java.sql.SQLOutput;
 
 public class AboutMeActivity extends AppCompatActivity {
-    BaseApiService mApiService;
+    BaseApiService mBaseApiService;
     Context mContext;
 
-    LinearLayout layout_renter, cancel_register;
-    TextView name, email, balance, show_address, show_name, show_phone_number;
+    TextView name, email, balance, accountName, accountEmail, accountBalance;
     TextView display_phone_number, display_name, display_address;
     Button RegisterRenter_button,  cancel_register_button, register_fixed_button, topup_button;
-    CardView card_layout_RegisterRenter, card_layout_input_register, card_layout_display;
-    EditText amount,renter_address, renter_name, renter_phone_number;
+    CardView card_layout_RegisterRenter, card_layout_input_register, card_layout_renter;
+    EditText amount,editName, editAddress, editPhoneNumber;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //default layout
         setContentView(R.layout.activity_about_me);
-        name = findViewById(R.id.name_aboutme);
-        email = findViewById(R.id.email_aboutme);
-        balance = findViewById(R.id.balance_aboutme);
-        name.setText(LoginActivity.staticAccount.name);
-        email.setText(LoginActivity.staticAccount.email);
-        balance.setText(String.valueOf(LoginActivity.staticAccount.balance));
+        mBaseApiService = UtilsApi.getApiService();
 
-        RegisterRenter_button = findViewById(R.id.RegisterRenter_button);
-        card_layout_RegisterRenter = findViewById(R.id.card_layout_RegisterRenter);
+        accountName = findViewById(R.id.accountName);
+        accountEmail = findViewById(R.id.accountEmail);
+        accountBalance = findViewById(R.id.balance_num);
+        accountName.setText(LoginActivity.staticAccount.name);
+        accountEmail.setText(LoginActivity.staticAccount.email);
+        accountBalance.setText(String.valueOf(LoginActivity.staticAccount.balance));
 
-        card_layout_input_register = findViewById(R.id.card_layout_input_register);
-        renter_address =findViewById(R.id.renter_address);
-        renter_name = findViewById(R.id.renter_name);
-        renter_phone_number = findViewById(R.id.renter_phone_number);
-        register_fixed_button = findViewById(R.id.register_fixed_button);
-        cancel_register_button = findViewById(R.id.cancel_register_button);
 
-        card_layout_display = findViewById(R.id.card_layout_display);
-        display_name = findViewById(R.id.display_name);
-        display_address = findViewById(R.id.display_address);
-        display_phone_number = findViewById(R.id.display_phone_number);
-        show_name = findViewById(R.id.show_name);
-        show_address = findViewById(R.id.show_address);
-        show_phone_number = findViewById(R.id.show_phone_number);
+        //top up amount
+        topup_button = findViewById(R.id.btnTopUp);
+        amount = findViewById(R.id.amount);
+        topup_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println(LoginActivity.staticAccount.id);
+                System.out.println(Double.parseDouble(amount.getText().toString()));
+                requestTopUp(LoginActivity.staticAccount.id, Double.parseDouble(amount.getText().toString()));
+            }
+        });
 
-        if(LoginActivity.staticAccount.renter == null){
+        //cardview 1 -> renter == null
+        RegisterRenter_button = findViewById(R.id.btnRegisterRenter);
+        card_layout_RegisterRenter = findViewById(R.id.cardview1);
+
+        //cardview 2 -> register renter button has clicked
+        card_layout_input_register = findViewById(R.id.cardview2);
+        editName = findViewById(R.id.editName);
+        editAddress =findViewById(R.id.editAddress);
+        editPhoneNumber = findViewById(R.id.editPhoneNumber);
+        register_fixed_button = findViewById(R.id.btnRegister);
+        cancel_register_button = findViewById(R.id.btnCancel);
+
+        //cardview 3 -> renter has just registered now
+        card_layout_renter = findViewById(R.id.cardview3);
+
+        display_name = findViewById(R.id.registeredName);
+        display_address = findViewById(R.id.registeredAddress);
+        display_phone_number = findViewById(R.id.registeredPhoneNumber);
+
+
+        RegisterRenter_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                card_layout_RegisterRenter.setVisibility(View.INVISIBLE);
+                card_layout_input_register.setVisibility(View.VISIBLE);
+                card_layout_renter.setVisibility(View.INVISIBLE);
+            }
+        });
+        if(LoginActivity.staticAccount.renter == null) {
             card_layout_RegisterRenter.setVisibility(View.VISIBLE);
-            card_layout_display.setVisibility(View.INVISIBLE);
+            card_layout_renter.setVisibility(View.INVISIBLE);
             card_layout_input_register.setVisibility(View.INVISIBLE);
-            RegisterRenter_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    card_layout_RegisterRenter.setVisibility(View.INVISIBLE);
-                    card_layout_display.setVisibility(View.INVISIBLE);
-                    card_layout_input_register.setVisibility(View.VISIBLE);
-                }
-            });
+        }
+        else {
+            card_layout_RegisterRenter.setVisibility(View.INVISIBLE);
+            card_layout_renter.setVisibility(View.VISIBLE);
+            card_layout_input_register.setVisibility(View.INVISIBLE);
+            display_name.setText(LoginActivity.staticAccount.renter.username);
+            display_address.setText(LoginActivity.staticAccount.renter.address);
+            display_phone_number.setText(LoginActivity.staticAccount.renter.phoneNumber);
+        }
+
             register_fixed_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Renter accountRenter = registerRenter();
+                    card_layout_renter.setVisibility(View.VISIBLE);
+                    card_layout_RegisterRenter.setVisibility(View.INVISIBLE);
+                    card_layout_input_register.setVisibility(View.INVISIBLE);
+                    Renter renter = requestRegisterRenter(LoginActivity.staticAccount.id, editName.getText().toString(), editAddress.getText().toString(), editPhoneNumber.getText().toString());
                 }
             });
             cancel_register_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     card_layout_RegisterRenter.setVisibility(View.INVISIBLE);
-                    card_layout_display.setVisibility(View.INVISIBLE);
+                    card_layout_renter.setVisibility(View.INVISIBLE);
                     card_layout_input_register.setVisibility(View.VISIBLE);
                 }
             });
         }
-
-        if(LoginActivity.staticAccount.renter != null){
-            card_layout_RegisterRenter.setVisibility(View.INVISIBLE);
-            card_layout_display.setVisibility(View.INVISIBLE);
-            card_layout_input_register.setVisibility(View.VISIBLE);
-        }
-    }
-    protected Renter registerRenter(){
-        mApiService.registerRenter(
-                LoginActivity.staticAccount.id,
-                renter_name.getText().toString(),
-                renter_phone_number.getText().toString(),
-                renter_address.getText().toString()).enqueue(new Callback<Renter>() {
+    protected Renter requestRegisterRenter(int id, String username, String address, String phoneNumber ) throws NullPointerException {
+        System.out.println("Id: " + id);
+        System.out.println("Username: " + username);
+        System.out.println("Address: " + address);
+        System.out.println("Phone: " + phoneNumber);
+        mBaseApiService.registerRenter(id, username, address, phoneNumber).enqueue(new Callback<Renter>() {
             @Override
             public void onResponse(Call<Renter> call, Response<Renter> response) {
                 if(response.isSuccessful()){
+                    System.out.println("Register succeed!");
                     LoginActivity.staticAccount.renter = response.body();
-                    Intent move = new Intent(AboutMeActivity.this,AboutMeActivity.class);
-                    startActivity(move);
+                    Intent intent = new Intent(AboutMeActivity.this,AboutMeActivity.class);
+                    startActivity(intent);
                 }
-                else{
-                    System.out.println("====failed?====");
-                }
-
             }
 
             @Override
@@ -119,9 +147,52 @@ public class AboutMeActivity extends AppCompatActivity {
         });
         return null;
     }
-}
+    protected Boolean requestTopUp(int id, double balance ){
+        mBaseApiService.topUp(id,balance).enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if(response.isSuccessful()){
+                    Boolean display_topUp = response.body();
+                    System.out.println("Top Up Successful!") ;
+                    //LoginActivity.reloadAccount(LoginActivity.staticAccount.id);//
+                    Toast.makeText(mContext, "Top Up Successful", Toast.LENGTH_SHORT).show();
+                    LoginActivity.staticAccount.balance = LoginActivity.staticAccount.balance + balance;
+                    recreate();
+                    System.out.println("Top Up = DONE");
+                    Intent intent = new Intent(AboutMeActivity.this, AboutMeActivity.class);
+                    startActivity(intent);
+                }
+            }
 
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                System.out.println("Top Up Error!");
+                System.out.println(t.toString());
+                Toast.makeText(mContext,"Top Up Failed",Toast.LENGTH_SHORT).show();
+            }
+        });
+        return null;
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        if (LoginActivity.staticAccount.renter != null) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.top_menu, menu);
+            return true;
+        }
+        return false;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.addbox_button) {
+            Intent intent = new Intent(AboutMeActivity.this, CreateRoomActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
+
+
